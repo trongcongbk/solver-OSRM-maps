@@ -1,0 +1,376 @@
+{
+  "depot": {
+    "location": [
+      20.9436645591136,
+      106.033648234809
+    ]
+  },
+  "vehicles": [
+    {
+      "id": "TAV01",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV02",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV03",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV04",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV05",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV06",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV07",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV08",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV09",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV10",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV11",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV12",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV13",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TA14",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    },
+    {
+      "id": "TAV15",
+      "type": "Xe_Tai",
+      "capacity_units": 800,
+      "start_location": [
+        20.9436645591136,
+        106.033648234809
+      ],
+      "time_window": {
+        "start_min": 570,
+        "end_min": 780
+      }
+    }
+  ],
+  "customers": [
+    {
+      "id": 1001,
+      "name": "JLong",
+      "location": [
+        20.9197960737001,
+        106.07753113854
+      ],
+      "demand_units": 115,
+      "time_window": {
+        "start_min": 570,
+        "end_min": 630
+      }
+    },
+    {
+      "id": 1002,
+      "name": "Thaco",
+      "location": [
+        20.9457501823009,
+        106.021044813842
+      ],
+      "demand_units": 50,
+      "time_window": {
+        "start_min": 600,
+        "end_min": 660
+      }
+    },
+    {
+      "id": 1003,
+      "name": "Marunix",
+      "location": [
+        20.9457501823009,
+        106.029069099468
+      ],
+      "demand_units": 180,
+      "time_window": {
+        "start_min": 600,
+        "end_min": 660
+      }
+    },
+    {
+      "id": 1004,
+      "name": "Duong_Quang_Primary_School",
+      "location": [
+        20.9384128966633,
+        106.120671380075
+      ],
+      "demand_units": 770,
+      "time_window": {
+        "start_min": 600,
+        "end_min": 660
+      }
+    },
+    {
+      "id": 1005,
+      "name": "Hung_Long_Primary_School",
+      "location": [
+        20.9425055544318,
+        105.959440323656
+      ],
+      "demand_units": 300,
+      "time_window": {
+        "start_min": 600,
+        "end_min": 660
+      }
+    },
+    {
+      "id": 1006,
+      "name": "Di_Su_Primary_School",
+      "location": [
+        20.9211538859945,
+        106.087106531556
+      ],
+      "demand_units": 800,
+      "time_window": {
+        "start_min": 600,
+        "end_min": 660
+      }
+    },
+    {
+      "id": 1007,
+      "name": "Ngoc_Te_Primary_School",
+      "location": [
+        20.9206503065698,
+        106.079375164618
+      ],
+      "demand_units": 500,
+      "time_window": {
+        "start_min": 615,
+        "end_min": 675
+      }
+    },
+    {
+      "id": 1008,
+      "name": "Sinseiseiko",
+      "location": [
+        20.9613333451811,
+        106.029055958538
+      ],
+      "demand_units": 270,
+      "time_window": {
+        "start_min": 615,
+        "end_min": 675
+      }
+    },
+    {
+      "id": 1009,
+      "name": "Bao_Khang",
+      "location": [
+        20.9613333451811,
+        106.034766975589
+      ],
+      "demand_units": 50,
+      "time_window": {
+        "start_min": 615,
+        "end_min": 675
+      }
+    },
+    {
+      "id": 1010,
+      "name": "Duoc",
+      "location": [
+        20.9613333451811,
+        106.035841510715
+      ],
+      "demand_units": 200,
+      "time_window": {
+        "start_min": 615,
+        "end_min": 675
+      }
+    },
+    {
+      "id": 1011,
+      "name": "PCK_Primary_School",
+      "location": [
+        20.9224833962893,
+        106.09387690864
+      ],
+      "demand_units": 500,
+      "time_window": {
+        "start_min": 615,
+        "end_min": 675
+      }
+    },
+    {
+      "id": 1012,
+      "name": "Nhan_Vinh_Primary_School",
+      "location": [
+        20.9271791268883,
+        106.084764171657
+      ],
+      "demand_units": 300,
+      "time_window": {
+        "start_min": 615,
+        "end_min": 675
+      }
+    },
+    {
+      "id": 1013,
+      "name": "Yamato",
+      "location": [
+        20.9603837686466,
+        106.029935422659
+      ],
+      "demand_units": 115,
+      "time_window": {
+        "start_min": 630,
+        "end_min": 690
+      }
+    }
+  ]
+}

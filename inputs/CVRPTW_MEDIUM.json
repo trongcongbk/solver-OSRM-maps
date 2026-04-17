@@ -1,0 +1,675 @@
+{
+  "depot": {
+    "location": [
+      37.95982552366875,
+      13.58250775000254
+    ]
+  },
+  "vehicles": [
+    {
+      "id": "LUN001",
+      "type": "MOTRICE",
+      "capacity_units": 15,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "LUN002",
+      "type": "MOTRICE",
+      "capacity_units": 10,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN004",
+      "type": "MOTRICE",
+      "capacity_units": 17,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN005",
+      "type": "MOTRICE",
+      "capacity_units": 10,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN006",
+      "type": "MOTRICE",
+      "capacity_units": 10,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN007",
+      "type": "MOTRICE",
+      "capacity_units": 15,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN008",
+      "type": "MOTRICE",
+      "capacity_units": 13,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN009",
+      "type": "BILICO",
+      "capacity_units": 32,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN010",
+      "type": "MOTRICE",
+      "capacity_units": 15,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN011",
+      "type": "BILICO",
+      "capacity_units": 32,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN012",
+      "type": "BILICO",
+      "capacity_units": 32,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN013",
+      "type": "MOTRICE",
+      "capacity_units": 18,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN014",
+      "type": "BILICO",
+      "capacity_units": 25,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN015",
+      "type": "MOTRICE",
+      "capacity_units": 12,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN016",
+      "type": "BILICO",
+      "capacity_units": 25,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN017",
+      "type": "BILICO",
+      "capacity_units": 32,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN018",
+      "type": "BILICO",
+      "capacity_units": 25,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN019",
+      "type": "MOTRICE",
+      "capacity_units": 18,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN020",
+      "type": "MOTRICE",
+      "capacity_units": 17,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN021",
+      "type": "BILICO",
+      "capacity_units": 32,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN022",
+      "type": "MOTRICE",
+      "capacity_units": 17,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "VEN023",
+      "type": "MOTRICE",
+      "capacity_units": 17,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB001",
+      "type": "MOTRICE",
+      "capacity_units": 15,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB002",
+      "type": "MOTRICE",
+      "capacity_units": 9,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB003",
+      "type": "MOTRICE",
+      "capacity_units": 17,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB004",
+      "type": "MOTRICE",
+      "capacity_units": 10,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB005",
+      "type": "MOTRICE",
+      "capacity_units": 10,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB006",
+      "type": "MOTRICE",
+      "capacity_units": 15,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB007",
+      "type": "MOTRICE",
+      "capacity_units": 13,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB008",
+      "type": "BILICO",
+      "capacity_units": 32,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB009",
+      "type": "BILICO",
+      "capacity_units": 32,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB010",
+      "type": "MOTRICE",
+      "capacity_units": 18,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB011",
+      "type": "MOTRICE",
+      "capacity_units": 12,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB012",
+      "type": "BILICO",
+      "capacity_units": 25,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB013",
+      "type": "MOTRICE",
+      "capacity_units": 18,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB014",
+      "type": "MOTRICE",
+      "capacity_units": 17,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB015",
+      "type": "MOTRICE",
+      "capacity_units": 17,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "SAB016",
+      "type": "MOTRICE",
+      "capacity_units": 17,
+      "start_location": [
+        37.95982552366875,
+        13.58250775000254
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    }
+  ],
+  "customers": [
+    {
+      "id": 1074,
+      "name": "TEST2",
+      "location": [
+        37.8038141,
+        13.6367896
+      ],
+      "demand_units": 12,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 1088,
+      "name": "TEST3",
+      "location": [
+        37.9069901,
+        13.8118967
+      ],
+      "demand_units": 18,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 1179,
+      "name": "TEST5",
+      "location": [
+        38.0157632,
+        12.5115714
+      ],
+      "demand_units": 8,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 1201,
+      "name": "TEST8",
+      "location": [
+        37.9193927,
+        13.9335265
+      ],
+      "demand_units": 7,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 1279,
+      "name": "TEST12",
+      "location": [
+        37.78177287927109,
+        13.71531754732132
+      ],
+      "demand_units": 4,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 1505,
+      "name": "TEST21",
+      "location": [
+        37.31732899359224,
+        14.036126997961704
+      ],
+      "demand_units": 12,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 5150,
+      "name": "TEST26",
+      "location": [
+        38.1690932,
+        13.3144141
+      ],
+      "demand_units": 18,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 5151,
+      "name": "TEST27",
+      "location": [
+        38.135824,
+        13.322324
+      ],
+      "demand_units": 18,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 5152,
+      "name": "TEST28",
+      "location": [
+        38.120792,
+        13.340724
+      ],
+      "demand_units": 27,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 5153,
+      "name": "TEST29",
+      "location": [
+        38.098467,
+        13.322301
+      ],
+      "demand_units": 32,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 5154,
+      "name": "TEST30",
+      "location": [
+        38.116978,
+        13.368419
+      ],
+      "demand_units": 11,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 5214,
+      "name": "TEST44",
+      "location": [
+        38.1042438,
+        13.3641118
+      ],
+      "demand_units": 12,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 5402,
+      "name": "TEST45",
+      "location": [
+        38.18559829314339,
+        13.323621153831484
+      ],
+      "demand_units": 32,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    }
+  ]
+}

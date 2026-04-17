@@ -1,0 +1,67 @@
+.log-viewer {
+  margin: 1.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.log-header {
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.log-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.log-content {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+}
+
+.log-empty {
+  color: #999;
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.log-entry {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  word-wrap: break-word;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+/* Auto-scroll to bottom */
+.log-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.log-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.log-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.log-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

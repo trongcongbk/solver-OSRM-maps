@@ -1,0 +1,129 @@
+{
+  "depot": {
+    "location": [
+      38.15427140919015,
+      13.205448389053347
+    ]
+  },
+  "vehicles": [
+    {
+      "id": "LUN001",
+      "type": "MOTRICE",
+      "capacity_units": 15,
+      "start_location": [
+        38.15427140919015,
+        13.205448389053347
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "LUN002",
+      "type": "MOTRICE",
+      "capacity_units": 10,
+      "start_location": [
+      38.15427140919015,
+      13.205448389053347
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "LUN003",
+      "type": "MOTRICE",
+      "capacity_units": 9,
+      "start_location": [
+      38.15427140919015,
+      13.205448389053347
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "LUN004",
+      "type": "MOTRICE",
+      "capacity_units": 17,
+      "start_location": [
+      38.15427140919015,
+      13.205448389053347
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    },
+    {
+      "id": "LUN005",
+      "type": "MOTRICE",
+      "capacity_units": 10,
+      "start_location": [
+      38.15427140919015,
+      13.205448389053347
+      ],
+      "time_window": {
+        "start_min": 240,
+        "end_min": 1260
+      }
+    }
+  ],
+  "customers": [
+    {
+      "id": 1088,
+      "name": "TEST3",
+      "location": [
+        37.9069901,
+        13.8118967
+      ],
+      "demand_units": 10,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 1179,
+      "name": "TEST5",
+      "location": [
+        38.0157632,
+        12.5115714
+      ],
+      "demand_units": 9,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 1199,
+      "name": "TEST7",
+      "location": [
+        37.9615299,
+        13.174141
+      ],
+      "demand_units": 6,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    },
+    {
+      "id": 1505,
+      "name": "TEST21",
+      "location": [
+        37.31732899359224,
+        14.036126997961704
+      ],
+      "demand_units": 12,
+      "time_window": {
+        "start_min": 270,
+        "end_min": 1230
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+Scripts/
+Include/
+Lib/
+pyvenv.cfg
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Git
+.git/
+.gitignore
+
+# Database (will be created in container)
+*.db
+distance_cache.db
+
+# Logs
+*.log
+logs/
+
+# Gurobi files
+*.ilp
+*.lp
+*.mps
+gurobi.log
+
+# Results (optional - can be mounted as volume)
+results/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node.js / Frontend
+webui/
+node_modules/
+
+# Test files
+*.pyc
+.pytest_cache/
+.coverage
+
+# Documentation
+README.md
+*.md

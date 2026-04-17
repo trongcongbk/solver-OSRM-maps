@@ -1,0 +1,78 @@
+.file-upload {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+/* =========================================
+   MỚI THÊM: Container để dàn ngang 3 nút
+   ========================================= */
+.upload-buttons-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; /* Tự động rớt dòng nếu màn hình điện thoại nhỏ */
+  width: 100%;
+}
+
+/* =========================================
+   SỬA: Bỏ width: 100% thay bằng flex: 1
+   để các nút tự động chia đều chiều ngang
+   ========================================= */
+.upload-button, .download-example {
+flex: 1; /* Các nút sẽ chia đều 3 phần bằng nhau */
+  min-width: 200px; /* Đảm bảo màn hình nhỏ thì nút không bị bóp méo */
+  padding: 1rem 1.5rem; /* Giảm padding ngang đi một chút cho đỡ chật */
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: white;
+  color: #667eea;
+  border: 2px dashed #667eea;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* Căn giữa chữ và icon bên trong nút */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-button:hover {
+  background: #f0f7ff;
+  border-color: #764ba2;
+  color: #764ba2;
+}
+
+/* =========================================
+   MỚI THÊM: Style riêng cho nút Excel
+   (Thiết kế đồng bộ với nút JSON cũ)
+   ========================================= */
+.upload-button.excel-btn {
+  color: #217346;
+  border-color: #217346; /* Giữ viền đứt quãng (dashed) được kế thừa ở trên */
+}
+
+.upload-button.excel-btn:hover {
+  background: #e6f4ea; /* Nền xanh lá nhạt khi hover */
+  border-color: #1a5c37;
+  color: #1a5c37;
+}
+
+.download-example {
+  color: #28a745;
+  border-color: #28a745;
+  border-style: solid;
+}
+
+.download-example:hover {
+  background: #e6f9ed;
+  border-color: #1e7e34;
+  color: #1e7e34;
+}
+
+.upload-hint {
+  margin-top: 0.5rem;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
