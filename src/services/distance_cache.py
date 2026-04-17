@@ -91,41 +91,35 @@ class DistanceCacheService:
         
         conn.close()
         return loc_hash
-    
-    def _fetch_from_osrm(self, from_lat: float, from_lon: float, 
+
+    def _fetch_from_osrm(self, from_lat: float, from_lon: float,
                          to_lat: float, to_lon: float) -> Optional[Tuple[float, float]]:
-        """
-        Fetch real distance and travel time from OSRM routing service.
-        
-        Returns:
-            (distance_km, duration_min) or None if request fails
-        """
-        # OSRM route API: /route/v1/{profile}/{coordinates}
-        # coordinates: lon,lat;lon,lat (note: OSRM uses lon,lat order!)
-        url = f"{self.osrm_base_url}/route/v1/driving/{from_lon},{from_lat};{to_lon},{to_lat}?overview=false"
-        
+        # Thêm steps=true để xem chi tiết lộ trình đi qua đâu
+        url = f"{self.osrm_base_url}/route/v1/driving/{from_lon},{from_lat};{to_lon},{to_lat}?overview=false&steps=true&annotations=true"
+
         try:
             req = urllib.request.Request(url)
             with urllib.request.urlopen(req, timeout=10) as response:
-                data = json.loads(response.read().decode('utf-8'))
-                
+                raw_data = response.read().decode('utf-8')
+                data = json.loads(raw_data)
+
+                # --- PHẦN DEBUG QUAN TRỌNG ---
+                # Log toàn bộ JSON trả về để bạn copy ra xem
+                logger.info(f"--- FULL OSRM RESPONSE FOR {from_lat},{from_lon} TO {to_lat},{to_lon} ---")
+                logger.info(raw_data)
+                # -----------------------------
+
                 if data.get('code') == 'Ok' and data.get('routes'):
                     route = data['routes'][0]
-                    distance_m = route['distance']  # meters
-                    duration_s = route['duration']  # seconds
-                    
-                    distance_km = distance_m / 1000.0
-                    duration_min = duration_s / 60.0
-                    
-                    logger.debug(f"OSRM: {from_lat},{from_lon} -> {to_lat},{to_lon}: {distance_km:.2f}km, {duration_min:.1f}min")
+                    # In ra các bước đi (steps) để xem nó vòng vèo ở đâu
+                    for i, step in enumerate(route['legs'][0]['steps']):
+                        logger.info(
+                            f"Step {i}: {step.get('name', 'Unnamed')} - {step.get('duration')}s - {step.get('distance')}m")
+
+                    distance_km = route['distance'] / 1000.0
+                    duration_min = route['duration'] / 60.0
                     return (distance_km, duration_min)
-                else:
-                    logger.warning(f"OSRM returned non-Ok code: {data.get('code')}")
-                    return None
-                    
-        except urllib.error.URLError as e:
-            logger.error(f"OSRM request failed: {e}")
-            return None
+                return None
         except Exception as e:
             logger.error(f"Error fetching from OSRM: {e}")
             return None

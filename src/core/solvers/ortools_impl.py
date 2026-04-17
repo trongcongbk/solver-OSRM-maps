@@ -485,8 +485,23 @@ class ORToolsSolverImpl:
                 if i < len(route) - 1:
                     from_loc = route[i]['location']
                     to_loc = route[i + 1]['location']
-                    raw_transit = self.problem_data['time_matrix'][from_loc][to_loc] / 100.0
-                    stop['actual_travel_time'] = round(raw_transit)
+                    next_stop = route[i + 1]  # Điểm đến
+
+                    # 1. Lấy tổng thời gian (đang bao gồm cả bốc xếp)
+                    total_time_scaled = self.problem_data['time_matrix'][from_loc][to_loc]
+
+                    # 2. Tính Service Time của điểm ĐẾN (to_loc) để trừ ra
+                    if to_loc != depot_idx:
+                        units = next_stop['load_before'] - next_stop['load_after']
+                        service_time_min = 5 + (0.015 * units)
+                    else:
+                        service_time_min = 0
+
+                    # 3. Travel Time thực sự = Tổng - Service Time
+                    service_time_scaled = int(service_time_min * 100)
+                    pure_travel_time_scaled = max(0, total_time_scaled - service_time_scaled)
+
+                    stop['actual_travel_time'] = pure_travel_time_scaled / 100.0
 
             # 2. Tính JIT Departure (Tối ưu để KHÔNG còn khoảng trắng ở điểm đầu)
             if len(route) > 2:
@@ -654,8 +669,18 @@ class ORToolsSolverImpl:
                 segment_distance_km = segment_distances[i] / 100.0
 
             # 1. LẤY THỜI GIAN DI CHUYỂN OSRM (Không dính líu đến Service Time)
-            raw_transit = self.problem_data['time_matrix'][from_stop['location']][to_stop['location']] / 100.0
-            actual_travel_time = round(raw_transit)
+            # 1. TÍNH TOÁN TRAVEL TIME THỰC SỰ (Bằng cách trừ đi Service Time của điểm đến)
+            total_time_scaled = self.problem_data['time_matrix'][from_stop['location']][to_stop['location']]
+
+            # Tính service time của điểm đến (to_stop)
+            service_time_to_stop = 0
+            if to_stop['location'] != depot_idx:
+                units_delivered = to_stop['load_before'] - to_stop['load_after']
+                service_time_to_stop = 5 + (0.015 * units_delivered)
+
+            service_time_scaled = int(service_time_to_stop * 100)
+            # Trừ đi phần bốc xếp để lấy thời gian chạy xe thuần túy
+            actual_travel_time = max(0, total_time_scaled - service_time_scaled) / 100.0
 
             # 2. TÍNH THỜI GIAN PHỤC VỤ (Tại điểm đến)
             service_time_minutes = 0

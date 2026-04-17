@@ -108,7 +108,7 @@ function RouteMap({ route, onClose }) {
     <div className="route-map-overlay">
       <div className="route-map-container">
         <div className="map-header">
-          <h2>🗺️ Route Map - Vehicle {route.vehicle_id + 1} (Capacity: {route.capacity} units)</h2>
+          <h2>🗺️ Route Map - {route.actual_vehicle_id || `Vehicle ${route.vehicle_id + 1}`} (Capacity: {route.capacity} units)</h2>
           <button className="close-btn" onClick={onClose}>✕</button>
         </div>
 
@@ -142,7 +142,9 @@ function RouteMap({ route, onClose }) {
                   <div className="stop-number">{index + 1}</div>
                   <div className="stop-details">
                     <div className="stop-title">
-                      {stop.location_info?.type === 'depot' ? '🏭 Depot' : `📦 ${stop.location_info?.customer_name || stop.location_info?.customer_id || 'Customer'}`}
+                        {stop.location_info?.type === 'depot'
+                        ? `🏭 ${stop.location_info?.customer_name || 'Depot'}`
+                        : `📦 ${stop.location_info?.customer_name || stop.location_info?.customer_id || 'Customer'}`}
                     </div>
                     <div className="stop-info">
                       <span>⏰ {stop.time_formatted}</span>
@@ -307,7 +309,7 @@ function RouteMap({ route, onClose }) {
                     <div className="popup-content">
                       {isDepot ? (
                         <>
-                          <h3>🏭 Depot</h3>
+                          <h3>🏭 {stop.location_info?.customer_name || 'Depot'}</h3>
                           <p><strong>Time:</strong> {stop.time_formatted}</p>
                           <p><strong>Load:</strong> {stop.load_before} → {stop.load_after} units</p>
                         </>

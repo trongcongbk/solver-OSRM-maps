@@ -100,7 +100,8 @@ class ProblemBuilder:
             'depot': 0,
             'service_time': service_time,
             'vehicle_speed': (speed_kmph / 60.0),  # Convert km/h to km/min
-            'coord_type': 'latlon'
+            'coord_type': 'latlon',
+            'depot_name': payload.get('depot', {}).get('name', 'Tổng kho') # Thêm dòng này
         }
         
         return solver_data
@@ -130,31 +131,24 @@ class ProblemBuilder:
             if isinstance(date_range, list) and len(date_range) >= 1:
                 return date_range[0]
         return None
-    
+
     @staticmethod
     def enrich_solution_routes(solution: Dict, problem: Dict, payload: dict, solved_date: str) -> List[Dict]:
         """
-        Enrich solution routes with customer information.
-        
-        Args:
-            solution: Raw solver solution
-            problem: Problem data used for solving
-            payload: Original request payload
-            solved_date: Date that was solved
-            
-        Returns:
-            List of enriched routes
+        Enrich solution routes with customer information and SPLIT travel/service time.
         """
         locations = problem['locations']
-        
-        # Rebuild active_customers by matching coordinates
+        demands = problem.get('demands', [])  # Lấy danh sách demand để tính service time
+        # Thêm dòng này để lấy danh sách xe từ payload gốc
+        vehicles_payload = payload.get('vehicles', [])
+
+        # 1. Tái cấu trúc active_customers để map thông tin (giữ nguyên logic cũ của bạn)
         active_customers = []
         for loc_idx in range(1, len(locations)):
             coord = tuple(locations[loc_idx])
             match = None
             for c in payload.get('customers', []):
                 if tuple(c.get('location', ())) == coord:
-                    # Find demand for this date
                     d = 0
                     if 'demands_units' in c:
                         d = c.get('demands_units', {}).get(solved_date, 0)
@@ -167,20 +161,51 @@ class ProblemBuilder:
                 active_customers.append(match)
             else:
                 active_customers.append({'id': None, 'name': None, 'location': coord})
-        
-        # Transform routes
+
+        # 2. Xử lý bóc tách thời gian cho từng stop
         routes_out = []
         for r in solution['routes']:
             new_r = r.copy()
+            # --- SỬA TẠI ĐÂY: Lấy ID thực tế của xe ---
+            v_idx = r.get('vehicle_id')
+            if v_idx is not None and v_idx < len(vehicles_payload):
+                # Bốc trường 'id' mà FileUpload.js đã đọc từ Excel
+                actual_id = vehicles_payload[v_idx].get('id')
+                new_r['actual_vehicle_id'] = str(actual_id) if actual_id else f"Vehicle {v_idx + 1}"
+            else:
+                new_r['actual_vehicle_id'] = f"Vehicle {v_idx + 1}"
+            # ------------------------------------------
             new_route = []
             for stop in r['route']:
                 stop_location_idx = stop.get('location')
-                
+
+                # --- PHẦN TÁCH THỜI GIÀN QUAN TRỌNG ---
+                # Lấy units tại điểm này để tính service_time đúng như trong solver_service.py
+                units = demands[stop_location_idx] if stop_location_idx < len(demands) else 0
+
+                # Công thức service_time phải khớp 100% với solver_service.py (5 min + 0.015*units)
+                current_service_time = (5 + (0.015 * units)) if stop_location_idx != 0 else 0
+
+                # stop['travel_time'] hiện đang là TỔNG (Driving + Service)
+                total_time_recorded = stop.get('travel_time', 0)
+
+                # Thời gian di chuyển thực = Tổng - Service
+                pure_driving_time = max(0, total_time_recorded - current_service_time)
+                # --------------------------------------
+
                 if stop_location_idx == 0:
-                    # Depot stop
-                    loc_info = {'type': 'depot', 'index': 0, 'location': locations[0]}
+                    # Lấy tên depot từ payload (đã được FileUpload.js đóng gói vào payload['depot']['name'])
+                    depot_data = payload.get('depot', {})
+                    # Ưu tiên lấy 'name' từ Excel, nếu không có thì lấy 'Tổng kho'
+                    actual_depot_name = depot_data.get('name') or "Tổng kho"
+
+                    loc_info = {
+                        'type': 'depot',
+                        'index': 0,
+                        'location': locations[0],
+                        'customer_name': actual_depot_name  # THÊM DÒNG NÀY để gửi tên về WebUI
+                    }
                 else:
-                    # Customer stop
                     customer_idx = stop_location_idx - 1
                     if customer_idx < len(active_customers):
                         cust = active_customers[customer_idx]
@@ -189,22 +214,23 @@ class ProblemBuilder:
                             'index': stop_location_idx,
                             'customer_id': cust.get('id'),
                             'customer_name': cust.get('name'),
-                            'location': locations[stop_location_idx] if stop_location_idx < len(locations) else None
+                            'location': locations[stop_location_idx]
                         }
                     else:
-                        loc_info = {
-                            'type': 'customer',
-                            'index': stop_location_idx,
-                            'customer_id': None,
-                            'customer_name': None,
-                            'location': locations[stop_location_idx] if stop_location_idx < len(locations) else None
-                        }
-                
+                        loc_info = {'type': 'customer', 'index': stop_location_idx,
+                                    'location': locations[stop_location_idx]}
+
                 new_stop = stop.copy()
                 new_stop['location_info'] = loc_info
+
+                # Ghi đè lại để WebUI hiển thị thanh màu xanh là Driving Time
+                new_stop['travel_time'] = round(pure_driving_time, 2)
+                # WebUI sẽ lấy trường này để hiển thị thanh màu hồng là Service Time
+                new_stop['service_time'] = round(current_service_time, 2)
+
                 new_route.append(new_stop)
-            
+
             new_r['route'] = new_route
             routes_out.append(new_r)
-        
+
         return routes_out

@@ -63,7 +63,7 @@ class SolverService:
             start_time = time.time()
             
             # Infer date from payload
-            solved_date = self.problem_builder.infer_date_from_payload(payload) or "unknown"
+            solved_date = ProblemBuilder.infer_date_from_payload(payload) or "unknown"
             logger.info(f"========== SOLVING FOR DATE: {solved_date} ==========")
             
             # Build problem from payload

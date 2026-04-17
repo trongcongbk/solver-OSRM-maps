@@ -110,18 +110,23 @@
 .segment-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  font-size: 11px;
-  padding: 4px;
-  text-align: center;
-  line-height: 1.3;
+  overflow: hidden; /* Ẩn phần thừa */
+  padding: 2px;
+  font-size: 10px; /* Giảm size chữ một chút */
+  line-height: 1.2;
 }
 
 .segment-info span {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ẩn phần thừa */
+  padding: 2px;
+  font-size: 10px; /* Giảm size chữ một chút */
+  line-height: 1.2;
 }
 
 @media (max-width: 768px) {

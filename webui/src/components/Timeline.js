@@ -56,7 +56,7 @@ function Timeline({ routes }) {
         {routes.map((routeData, routeIdx) => (
           <div key={routeIdx} className="vehicle-timeline-row">
             <div className="vehicle-header">
-              <strong>Vehicle {routeData.vehicle_id + 1}</strong>
+              <strong>{routeData.actual_vehicle_id || `Vehicle ${routeData.vehicle_id + 1}`}</strong>
               <span className="vehicle-stats">
                 {routeData.num_customers} stops • {routeData.distance_formatted}
               </span>
@@ -82,13 +82,14 @@ function Timeline({ routes }) {
                         <>
                           <span>{seg.distance_km?.toFixed(1)} km</span>
                           <span>{Math.round(seg.duration_minutes)} min</span>
-                          <span>→ {seg.to_location === 0 ? 'Depot' : `Client ${seg.to_location}`}</span>
+                          <span>→ {seg.to_location === 0 ? (routeData.route[0].location_info.customer_name || 'Nhà máy') : (routeData.route.find(r => r.location === seg.to_location)?.location_info.customer_name || `Client ${seg.to_location}`)}</span>
                         </>
                       )}
                       {seg.type === 'service' && (
                         <>
                           <span>{Math.round(seg.duration_minutes)} min service</span>
-                          <span>Client {seg.location}</span>
+                          {/*<span>{routeData.route.find(r => r.location === seg.location)?.location_info?.customer_name || `Client ${seg.location}`}</span>
+                          <span>Client {seg.location}</span>*/}
                         </>
                       )}
                       {seg.type === 'wait' && <span>Wait {Math.round(seg.duration_minutes)}m</span>}

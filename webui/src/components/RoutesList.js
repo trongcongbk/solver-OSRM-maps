@@ -17,7 +17,7 @@ function RoutesList({routes, onRouteClick}) {
                         onClick={() => onRouteClick(route)}
                     >
                         <div className="route-header">
-                            <h3>Vehicle {route.vehicle_id + 1}</h3>
+                            <h3>{route.actual_vehicle_id || `Vehicle ${route.vehicle_id + 1}`}</h3>
                             <span className="route-badge">Trip {index + 1}</span>
                         </div>
 

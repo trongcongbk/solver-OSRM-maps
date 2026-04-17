@@ -53,8 +53,10 @@ function FileUpload({ onFileLoad }) {
 
         // Tạo Depot
         const formattedDepot = {
-          location: [parseFloat(rawDepot.lat), parseFloat(rawDepot.lon)]
+          location: [parseFloat(rawDepot.lat), parseFloat(rawDepot.lon)],
+          name: rawDepot.name || "Tổng kho"
         };
+        console.log("Depot Name bốc được từ Excel:", formattedDepot.name);
 
         // Tạo Vehicles
         const formattedVehicles = rawVehicles.map(v => ({
